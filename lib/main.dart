@@ -31,7 +31,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  late String elfWithMostCalories;
+  late ElfWithCalories elfWithMostCalories;
   late final List<ElfWithCalories> elvesWithCalories;
   late final int firstBatch;
   late final int secondBatch;
@@ -61,10 +61,8 @@ class _MyHomePageState extends State<MyHomePage> {
     elvesWithCalories
         .addAll([firstElf, secondElf, thirdElf, fourthElf, fifthElf]);
 
-    elfWithMostCalories = elvesWithCalories
-        .reduce((value, element) =>
-            value.calories > element.calories ? value : element)
-        .name;
+    elfWithMostCalories = elvesWithCalories.reduce((value, element) =>
+        value.calories > element.calories ? value : element);
 
     return Scaffold(
       appBar: AppBar(
@@ -75,7 +73,10 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              'Elf with the most calories is: ${elfWithMostCalories}',
+              'Elf with the most calories is: ${elfWithMostCalories.name}',
+            ),
+            Text(
+              'With ${elfWithMostCalories.calories} calories',
             ),
           ],
         ),
