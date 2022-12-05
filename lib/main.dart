@@ -21,7 +21,7 @@ listOfElves() async {
   }
 
   calories.sort();
-  print('Elf with most alories${calories[calories.length - 1]}');
+  print('Elf with most calories${calories[calories.length - 1]}');
   print(
       '${calories[calories.length - 1] + calories[calories.length - 2] + calories[calories.length - 3]}');
 }
